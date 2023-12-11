@@ -43,6 +43,11 @@ class VendingMachine:
         print('--------------------------------------------------------')
         print('========================================================')
         callback()
+
+    def reset(self):
+        self.storedMoney = 0
+        self.chosenProduct = ''
+        self.change = 0
     
     def chooseProduct(self):
         print('\n========================================================')
@@ -116,7 +121,8 @@ class VendingMachine:
         if user.upper() == 'Y':
             print('Re-running Le Vendinger Machiner...')
             print('========================================================')
-            VendingMachine().run()
+            self.reset()
+            self.run()
         else:
             print('Thank you for using Le Vendinger Machiner!')
             print('========================================================')
