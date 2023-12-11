@@ -110,18 +110,17 @@ class VendingMachine:
         self.chooseProduct()
         self.getMoney()
         self.calChange()
-    
-if __name__ == '__main__':
-    VendingMachine().run()
-    while True:
+        
         print('========================================================')
-        user = input("Do you want to use Le Vendinger Machiner again (Y/N)? ")
+        user = input("Do you want to use Le Vendinger Machiner again? (type 'y' if yes) ")
         if user.upper() == 'Y':
             print('Re-running Le Vendinger Machiner...')
             print('========================================================')
             VendingMachine().run()
-        elif user.upper() == 'N':
+        else:
             print('Thank you for using Le Vendinger Machiner!')
             print('========================================================')
             exit(0)
-        else: VendingMachine().error('Invalid command')
+    
+if __name__ == '__main__':
+    VendingMachine().run()
